@@ -6,6 +6,7 @@ DIST_DIR="$ROOT_DIR/dist"
 BUILD_DIR="$ROOT_DIR/build"
 SPEC_PATH="$ROOT_DIR/scripts/macos/feishu_archive.spec"
 DMG_SETTINGS="$ROOT_DIR/scripts/macos/dmg_settings.py"
+export FEISHU_ARCHIVE_ROOT="$ROOT_DIR"
 
 cd "$ROOT_DIR"
 

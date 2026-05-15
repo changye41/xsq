@@ -1,7 +1,8 @@
+import os
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(os.environ.get("FEISHU_ARCHIVE_ROOT", os.getcwd())).resolve()
 DIST = ROOT / "dist"
 APP_NAME = "Feishu Message Archive.app"
 VOLUME_NAME = "Feishu Message Archive Installer"

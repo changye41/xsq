@@ -1,9 +1,10 @@
+import os
 from pathlib import Path
 
 from PyInstaller.utils.hooks import collect_data_files
 
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(os.environ.get("FEISHU_ARCHIVE_ROOT", os.getcwd())).resolve()
 SRC = ROOT / "src"
 
 datas = collect_data_files("feishu_message_archive", include_py_files=False)

@@ -58,3 +58,4 @@ python -m feishu_message_archive --date 2026-05-11 --output-dir ./out
 - 2026-05-12 13:57（UTC+8）：导出时段设置持久化（`export_window_ui_prefs.json`），自动继承上次的时区、按日历日日期、自定义时段起止日期与时间。
 - 2026-05-12 16:08（UTC+8）：AI 分析完成后增加“是否生成飞书文档”确认流程：选“否”不处理，选“是”则创建飞书文档并写入完整分析；标题按“聊天记录日期+飞书信息归档”，同名时自动追加编号（`（2）` 等）。
 - 2026-05-15 14:20（UTC+8）：新增 macOS 可分发打包脚手架（`scripts/macos/build_macos.sh` + `feishu_archive.spec` + `dmg_settings.py`），支持在 macOS 上一键生成 `.app` 与 `.dmg`；README 同步补充终端构建与分发说明（目标机仅需外部安装 `lark-cli`）。
+- 2026-05-15 14:47（UTC+8）：修复 macOS CI 打包偶发 `NameError: __file__ is not defined`：`feishu_archive.spec` / `dmg_settings.py` 改为优先读取环境变量 `FEISHU_ARCHIVE_ROOT`（回退 `cwd`），并在 `build_macos.sh` 中显式导出该变量。
