@@ -1,0 +1,47 @@
+name: Build macOS App DMG
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "src/**"
+      - "scripts/macos/**"
+      - "pyproject.toml"
+      - "README.md"
+      - ".github/workflows/build-macos.yml"
+
+jobs:
+  build-macos:
+    runs-on: macos-latest
+    timeout-minutes: 40
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Build .app and .dmg
+        run: |
+          chmod +x scripts/macos/build_macos.sh
+          ./scripts/macos/build_macos.sh
+
+      - name: Upload app artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Feishu-Message-Archive-app
+          path: dist/Feishu Message Archive.app
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Upload dmg artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Feishu-Message-Archive-dmg
+          path: dist/Feishu-Message-Archive.dmg
+          if-no-files-found: error
+          retention-days: 7
