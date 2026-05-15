@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "feishu-message-archive"
+version = "0.1.0"
+description = "Collect and normalize Feishu IM messages via lark-cli for LLM-ready exports."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4"]
+ui = ["streamlit>=1.28"]
+analyze = ["httpx>=0.27"]
+
+[project.scripts]
+feishu-archive = "feishu_message_archive.cli:main"
+feishu-archive-ui = "feishu_message_archive.ui_run:main"
+feishu-archive-analyze = "feishu_message_archive.cli_analyze:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

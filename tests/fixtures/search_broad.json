@@ -1,0 +1,30 @@
+{
+  "messages": [
+    {
+      "message_id": "om_100",
+      "create_time": "1715400000000",
+      "chat_id": "oc_g1",
+      "chat_name": "项目A",
+      "chat_type": "group",
+      "msg_type": "text",
+      "sender": { "id": "ou_self", "name": "本人" },
+      "content": "我发的进度说明",
+      "deleted": false,
+      "updated": false
+    },
+    {
+      "message_id": "om_101",
+      "create_time": "1715403600000",
+      "chat_id": "oc_g1",
+      "chat_name": "项目A",
+      "chat_type": "group",
+      "msg_type": "text",
+      "sender": { "id": "ou_peer", "name": "同事" },
+      "content": "请补充材料",
+      "deleted": false,
+      "updated": false
+    }
+  ],
+  "has_more": false,
+  "page_token": ""
+}

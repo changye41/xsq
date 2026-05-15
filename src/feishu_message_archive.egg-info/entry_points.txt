@@ -1,0 +1,4 @@
+[console_scripts]
+feishu-archive = feishu_message_archive.cli:main
+feishu-archive-analyze = feishu_message_archive.cli_analyze:main
+feishu-archive-ui = feishu_message_archive.ui_run:main

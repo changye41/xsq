@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "message_id": "om_200",
+      "create_time": "1715407200000",
+      "chat_id": "oc_g2",
+      "chat_name": "项目B",
+      "chat_type": "group",
+      "msg_type": "text",
+      "sender": { "id": "ou_boss", "name": "负责人" },
+      "content": "请今天内确认",
+      "mentions": [ { "id": "ou_self", "name": "本人" } ],
+      "deleted": false,
+      "updated": false
+    }
+  ],
+  "has_more": false
+}
